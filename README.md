@@ -2,19 +2,16 @@
 
 «An AI-powered Resume Screening & ATS Analysis Platform with Multi-LLM Architecture (Gemini, OpenRouter & Groq)»
 
-<p align="center">"Python" (https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
+<p align="center">
 
-"Streamlit" (https://img.shields.io/badge/Streamlit-Web%20App-red?style=for-the-badge&logo=streamlit)
+![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-red?style=for-the-badge&logo=streamlit)
+![Gemini](https://img.shields.io/badge/Google-Gemini-blue?style=for-the-badge&logo=google)
+![OpenRouter](https://img.shields.io/badge/OpenRouter-LLM-success?style=for-the-badge)
+![Groq](https://img.shields.io/badge/Groq-AI-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-"Gemini" (https://img.shields.io/badge/Google-Gemini-blue?style=for-the-badge&logo=google)
-
-"OpenRouter" (https://img.shields.io/badge/OpenRouter-LLM-success?style=for-the-badge)
-
-"Groq" (https://img.shields.io/badge/Groq-AI-orange?style=for-the-badge)
-
-"License" (https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
-</p>---
+</p>
 
 📌 Overview
 
@@ -132,67 +129,67 @@ Version Control| Git & GitHub
 
 ---
 
-📸 Application Screenshots
+# 📸 Application Screenshots
 
-🏠 Home Page
+## 🏠 Home Page
 
-"Home Page" (assets/homepage.png)
-
----
-
-📊 ATS Dashboard
-
-"ATS Dashboard" (assets/ats_dashboard.png)
+![Home Page](assets/homepage.png)
 
 ---
 
-🏆 Candidate Leaderboard
+## 📊 ATS Dashboard
 
-"Candidate Leaderboard" (assets/candidate_leaderboard.png)
-
----
-
-👤 Candidate Summary
-
-"Candidate Summary" (assets/candidate_summary.png)
+![ATS Dashboard](assets/ats_dashboard.png)
 
 ---
 
-🤖 AI Feedback
+## 🏆 Candidate Leaderboard
 
-"AI Feedback" (assets/ai_feedback.png)
-
----
-
-✍️ Resume Optimizer
-
-"Resume Optimizer" (assets/resume_optimizer.png)
+![Candidate Leaderboard](assets/candidate_leaderboard.png)
 
 ---
 
-✅ Resume Validation
+## 👤 Candidate Summary
 
-"Resume Validation" (assets/Resume_validation.png)
-
----
-
-📈 Improvement Suggestions
-
-"Improvement Suggestions" (assets/improvement.png)
+![Candidate Summary](assets/candidate_summary.png)
 
 ---
 
-📝 Resume Rewriter (Before vs After)
+## 🤖 AI Feedback
 
-"Resume Rewrite" (assets/before_after.png)
+![AI Feedback](assets/ai_feedback.png)
+
+---
+
+## ✍️ Resume Optimizer
+
+![Resume Optimizer](assets/resume_optimizer.png)
 
 ---
 
-📄 Overleaf / LaTeX Resume
+## ✅ Resume Validation
 
-"Overleaf Resume" (assets/overleaf_latex.png)
+![Resume Validation](assets/Resume_validation.png)
 
 ---
+
+## 📈 Improvement Suggestions
+
+![Improvement Suggestions](assets/improvement.png)
+
+---
+
+## 📝 Resume Rewriter (Before vs After)
+
+![Resume Rewrite](assets/before_after.png)
+
+---
+
+## 📄 Overleaf / LaTeX Resume
+
+![Overleaf Resume](assets/overleaf_latex.png)
+
+
 
 ⚙️ Installation
 
