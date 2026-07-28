@@ -1,13 +1,16 @@
 
 from utils.advanced_ats_engine import calculate_advanced_ats
-from utils.llm_scoring import llm_resume_score
 
 
-def calculate_optimized_score(optimized_resume, jd_text):
+def calculate_optimized_score(
+    optimized_resume,
+    jd_text
+):
 
     ats = calculate_advanced_ats(
         optimized_resume,
-        jd_text
+        jd_text,
+        use_llm=False
     )
 
     rule = ats["final_score"]
