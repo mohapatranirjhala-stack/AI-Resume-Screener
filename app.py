@@ -862,6 +862,13 @@ if st.session_state.analysis_done:
                         tex_file
                     )
 
+                    if pdf_file is None:
+
+                        pdf_file = generate_reportlab_pdf(
+                            optimized["optimized_resume"],
+                            "optimized_resume.pdf"
+                        )
+
                     st.session_state[f"optimized_{index}"] = {
                         "optimized": optimized,
                         "validation": validation,
@@ -1111,10 +1118,11 @@ if st.session_state.analysis_done:
                             )
                     else:
 
-                        st.warning(
-                            "⚠️ Professional PDF could not be generated. "
-                            "Please ensure MiKTeX is installed and pdflatex is available."
-                        )
+                    st.info(
+                        "📄 Local/Desktop: Uses LaTeX (MiKTeX/pdflatex) for professional PDF generation. "
+                        "Streamlit Cloud: Automatically switches to ReportLab because LaTeX compilers are unavailable. "
+                        "Both options generate a downloadable PDF."
+                    )
 
                     st.divider()
 
