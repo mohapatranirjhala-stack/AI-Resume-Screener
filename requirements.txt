@@ -33,7 +33,7 @@ httpx==0.28.1
 GitPython==3.1.45
 
 transformers==4.56.1
-torch==2.8.0
+
 
 Pillow==11.3.0
 
