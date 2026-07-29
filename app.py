@@ -862,12 +862,7 @@ if st.session_state.analysis_done:
                         tex_file
                     )
 
-                    if pdf_file is None:
-
-                        pdf_file = generate_reportlab_pdf(
-                            optimized["optimized_resume"],
-                            "optimized_resume.pdf"
-                        )
+                    
 
                     st.session_state[f"optimized_{index}"] = {
                         "optimized": optimized,
@@ -1119,9 +1114,10 @@ if st.session_state.analysis_done:
                     else:
 
                     st.info(
-                        "📄 Local/Desktop: Uses LaTeX (MiKTeX/pdflatex) for professional PDF generation. "
-                        "Streamlit Cloud: Automatically switches to ReportLab because LaTeX compilers are unavailable. "
-                        "Both options generate a downloadable PDF."
+                       "📄 A professional LaTeX resume has been generated successfully.\n\n"
+    "• On your local machine (MiKTeX/TeX Live installed), you can compile it directly to a PDF.\n"
+    "• On Streamlit Cloud, LaTeX compilers are not available, so only the .tex file is provided.\n"
+    "• You can also upload the .tex file to Overleaf to edit and generate a high-quality PDF."
                     )
 
                     st.divider()
