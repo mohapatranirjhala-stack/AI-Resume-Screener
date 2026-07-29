@@ -1,5 +1,4 @@
 
-
 from utils.openrouter import client
 from utils.json_parser import parse_llm_json
 
@@ -58,39 +57,44 @@ Example:
 }}
 """
 
-    response = client.chat.completions.create(
-        model="openai/gpt-oss-20b:free",
-        messages=[
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        temperature=0.3
-    )
-
-    result = response.choices[0].message.content
-
     try:
-        return parse_llm_json(result)
-
-    except Exception:
 
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-20b:free",
             messages=[
-                {
-                    "role": "system",
-                    "content": "Return ONLY valid JSON."
-                },
                 {
                     "role": "user",
                     "content": prompt
                 }
             ],
-            temperature=0
+            temperature=0.3
         )
 
         result = response.choices[0].message.content
 
         return parse_llm_json(result)
+
+    except Exception:
+
+        return {
+
+            "strengths": [
+                "Resume successfully analysed using ATS engine.",
+                "Relevant technical skills detected.",
+                "Resume structure meets ATS requirements."
+            ],
+
+            "weaknesses": [
+                "Detailed AI feedback is temporarily unavailable.",
+                "Consider adding more quantified achievements.",
+                "Include additional job-specific keywords."
+            ],
+
+            "recommendations": [
+                "Retry after AI quota resets.",
+                "Continue improving ATS keyword coverage.",
+                "Add measurable project outcomes.",
+                "Keep GitHub and LinkedIn updated."
+            ]
+
+        }

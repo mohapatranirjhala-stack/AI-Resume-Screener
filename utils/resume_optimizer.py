@@ -70,44 +70,35 @@ Return ONLY valid JSON.
 
 {{
     "optimized_resume":"",
-
     "summary":"",
-
     "keywords_added":[
         "",
         "",
         ""
     ],
-
     "keyword_count":0,
-
     "changes":[
         "",
         "",
         ""
     ],
-
     "keyword_mapping":[
         {{
             "jd_keyword":"",
             "resume_change":""
         }}
     ],
-
     "ats_improvements":[
         "",
         "",
         ""
     ],
-
     "sections_improved":[
         "",
         "",
         ""
     ],
-
     "predicted_improvement":"High",
-
     "compliance":{{
         "fake_skills":"No",
         "fake_projects":"No",
@@ -118,17 +109,58 @@ Return ONLY valid JSON.
 }}
 """
 
-    response = client.chat.completions.create(
-        model="openai/gpt-oss-20b:free",
-        messages=[
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        temperature=0
-    )
+    try:
 
-    return parse_llm_json(
-        response.choices[0].message.content
-    )
+        response = client.chat.completions.create(
+            model="openai/gpt-oss-20b:free",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            temperature=0
+        )
+
+        return parse_llm_json(
+            response.choices[0].message.content
+        )
+
+    except Exception:
+
+        return {
+
+            "optimized_resume": resume_text,
+
+            "summary":
+                "AI resume optimization is temporarily unavailable because the AI quota has been reached. The original resume is shown.",
+
+            "keywords_added": [],
+
+            "keyword_count": 0,
+
+            "changes": [
+                "AI optimization temporarily unavailable."
+            ],
+
+            "keyword_mapping": [],
+
+            "ats_improvements": [
+                "Rule-based ATS analysis is still available."
+            ],
+
+            "sections_improved": [],
+
+            "predicted_improvement": "Unavailable",
+
+            "compliance": {
+
+                "fake_skills": "No",
+                "fake_projects": "No",
+                "fake_experience": "No",
+                "fake_certifications": "No",
+                "ats_safe": "Yes"
+
+            }
+
+        }

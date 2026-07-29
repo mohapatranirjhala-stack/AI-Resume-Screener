@@ -39,21 +39,34 @@ Resume:
 {original_resume}
 """
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=prompt
-    )
+    try:
 
-    result = parse_llm_json(
-        response.text
-    )
+        response = client.models.generate_content(
+            model=MODEL,
+            contents=prompt
+        )
 
-    if not isinstance(result, dict):
+        result = parse_llm_json(
+            response.text
+        )
+
+        if not isinstance(result, dict):
+            return {
+                "rewritten_resume": original_resume
+            }
+
+        if "rewritten_resume" not in result:
+            result["rewritten_resume"] = original_resume
+
+        return result
+
+    except Exception:
+
         return {
-            "rewritten_resume": original_resume
+
+            "rewritten_resume": original_resume,
+
+            "message":
+            "AI resume rewriting is temporarily unavailable because the AI quota has been reached. The original resume is being displayed. Once the AI service becomes available again, rewritten content will be generated automatically."
+
         }
-
-    if "rewritten_resume" not in result:
-        result["rewritten_resume"] = original_resume
-
-    return result

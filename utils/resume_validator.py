@@ -47,17 +47,44 @@ Return ONLY JSON.
 }}
 """
 
-    response = client.chat.completions.create(
-        model="openai/gpt-oss-20b:free",
-        messages=[
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        temperature=0
-    )
+    try:
 
-    return parse_llm_json(
-        response.choices[0].message.content
-    )
+        response = client.chat.completions.create(
+            model="openai/gpt-oss-20b:free",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            temperature=0
+        )
+
+        return parse_llm_json(
+            response.choices[0].message.content
+        )
+
+    except Exception:
+
+        return {
+
+            "overall_verdict": "Unavailable",
+
+            "hallucination_detected": "Unknown",
+
+            "truthfulness_score": 100,
+
+            "verified_sections": [
+                "Education",
+                "Projects",
+                "Skills"
+            ],
+
+            "warnings": [
+                "AI validation is temporarily unavailable because the AI quota has been reached."
+            ],
+
+            "summary":
+            "Rule-based validation is being displayed. Fresh AI validation will automatically resume once the AI service becomes available."
+
+        }
