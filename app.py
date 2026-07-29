@@ -1089,7 +1089,8 @@ if st.session_state.analysis_done:
                             mime="text/plain",
                             key=f"latex_download_{index}"
                         )
-                        # --------------------------------------------
+
+                    # --------------------------------------------
                     # Generate Professional PDF from LaTeX
                     # --------------------------------------------
 
@@ -1111,14 +1112,15 @@ if st.session_state.analysis_done:
                                 mime="application/pdf",
                                 key=f"latex_pdf_{index}"
                             )
+
                     else:
 
-                    st.info(
-                       "📄 A professional LaTeX resume has been generated successfully.\n\n"
-    "• On your local machine (MiKTeX/TeX Live installed), you can compile it directly to a PDF.\n"
-    "• On Streamlit Cloud, LaTeX compilers are not available, so only the .tex file is provided.\n"
-    "• You can also upload the .tex file to Overleaf to edit and generate a high-quality PDF."
-                    )
+                        st.info(
+                            "📄 A professional LaTeX resume has been generated successfully.\n\n"
+                            "• On your local machine (MiKTeX/TeX Live installed), you can compile it directly to a PDF.\n"
+                            "• On Streamlit Cloud, LaTeX compilers are not available, so only the .tex file is provided.\n"
+                            "• You can also upload the .tex file to Overleaf to edit and generate a high-quality PDF."
+                        )
 
                     st.divider()
 
