@@ -963,6 +963,12 @@ if st.session_state.analysis_done:
                         fig,
                         use_container_width=True
                     )
+                    st.info(
+                        "ℹ️ This resume is optimized using only your existing skills, "
+                        "experience, projects, and achievements. No fake information "
+                        "is added, so the ATS score may increase, decrease, or remain "
+                        "unchanged. Re-upload the optimized resume for a fresh evaluation."
+                    )
 
                     st.divider()
 
