@@ -1003,19 +1003,19 @@ if st.session_state.analysis_done:
 
                     st.divider()
 
-                    st.subheader("👨‍💼 Recruiter Verdict")
+                    
 
-                    if optimized_score["final_score"] >= 90:
-                        st.success("🌟 Strong Hire")
+                    st.subheader("👨‍💼 Optimization Status")
 
-                    elif optimized_score["final_score"] >= 80:
-                        st.info("✅ Hire")
+                    st.success("✅ Optimization completed successfully!")
 
-                    elif optimized_score["final_score"] >= 70:
-                        st.warning("⚠️ Consider")
+                    st.info(
+                        "The resume has been optimized based on the job description. "
+                        "Download the optimized resume and re-upload it for a fresh evaluation "
+                        "to view the updated ATS score and recruiter verdict."
+                    )
 
-                    else:
-                        st.error("❌ Reject")
+                    st.divider()
 
                     st.divider()
 
@@ -1211,30 +1211,30 @@ if st.session_state.analysis_done:
                         )
                         st.divider()
 
-                    st.subheader(
-                        "🌟 Professional Resume"
-                    )
+                    # st.subheader(
+                    #     "🌟 Professional Resume"
+                    # )
 
-                    if pdf_file:
+                    # if pdf_file:
 
-                        with open(
-                            pdf_file,
-                            "rb"
-                        ) as file:
+                    #     with open(
+                    #         pdf_file,
+                    #         "rb"
+                    #     ) as file:
 
-                            st.download_button(
-                                "📄 Download Professional Resume (LaTeX PDF)",
-                                data=file,
-                                file_name="Professional_Resume.pdf",
-                                mime="application/pdf",
-                                key=f"professional_pdf_{index}"
-                            )
+                    #         st.download_button(
+                    #             "📄 Download Professional Resume (LaTeX PDF)",
+                    #             data=file,
+                    #             file_name="Professional_Resume.pdf",
+                    #             mime="application/pdf",
+                    #             key=f"professional_pdf_{index}"
+                    #         )
 
-                    else:
+                    # else:
 
-                        st.warning(
-                            "Professional Resume could not be generated."
-                        )
+                    #     st.warning(
+                    #         "Professional Resume could not be generated."
+                    #     )
 
                     with open(
                         f"resume_report_{index}.docx",
