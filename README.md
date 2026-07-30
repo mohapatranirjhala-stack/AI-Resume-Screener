@@ -12,9 +12,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 </p>
-## 🌐 Live Demo
-
-🔗 **Live Application:** https://ai-resume-screener-m4hmtfdj4mai8jyygqxhb8.streamlit.app
+[![Live Demo](https://img.shields.io/badge/🚀-Live%20Demo-success?style=for-the-badge)](https://ai-resume-screener-m4hmtfdj4mai8jyygqxhb8.streamlit.app)
 
 ⭐ No installation required. Upload a Job Description and Resume to experience the complete AI-powered screening workflow.
 
